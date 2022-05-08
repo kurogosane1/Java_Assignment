@@ -69,7 +69,7 @@ public class Assignment
 
     public static void main(String[] args) {
         // Score Array
-        ArrayList<Integer> scores = new ArrayList<Integer>();
+        // ArrayList<Integer> scores = new ArrayList<Integer>();
 
         //  Scanner myInput = new Scanner(System.in);
         // System.out.println("Welcome to calculating your test scores");
@@ -99,36 +99,48 @@ public class Assignment
         // System.out.println("Enter your final quiz score");
         // String quiz_10 = myInput.nextLine();
         // System.out.println("Enter your 3rd quiz score");
-        inputScores();
-        double result = scoreCalculator(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9,
-                quiz_10);
-        String grade = grading(result);
-        System.out.println(" Your total quiz score " + (int) result);
-        System.out.println("Your grade is " + grade);
+        int[] scores = inputScores();
+        printScores(scores);
+        
+        // double result = scoreCalculator(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9,
+        //         quiz_10);
+        // String grade = grading(result);
+        // System.out5.println(" Your total quiz score " + (int) result);
+        // System.out.println("Your grade is " + grade);
     }
     
      // Program to have them loop and enter test scores
-    public static void inputScores()
+    public static int[] inputScores()
     {
-        
+        int[] myArray = new int[10];
         Scanner myInput = new Scanner(System.in);
         System.out.println("Welcome to calculating your test scores");
         System.out.println("We will ask you to enter your 10 quiz scores and display your letter grade and average");
         System.out.println("Please enter between 1-99 only");
         System.out.println("Any number beyond that will result in the program terminating");
-        System.out.println("Do not enter any text /n " +
+        System.out.println("Do not enter any text /n" +
                 "or the program will be terminated");
        for (int i = 0; i < 10; i++)
        {
-        System.out.println("Enter your "+(i+1)+" quiz"+ " test score");
-        int data = Integer.parseInt(myInput.nextLine());
-        if (data >= 999) {
-            break;
-        }
-        scores.add(data);
-        
+           System.out.println("Enter your " + (i + 1) + " quiz" + " test score");
+           int data = Integer.parseInt(myInput.nextLine());
+           if (data >= 999) {
+               System.out.println("Sorry you enter greater than 999 or more");
+               System.out.println("will be quitting the program");
+               System.exit(0);
+           }
+           myArray[i] = data;
+
+           
        }
+       return myArray;
     }
 
+    public static void printScores(int[] array) {
+        for (int i = 0; i < array.length; i++)
+        {
+            System.out.println("Your "+ i+" quiz score is "+ array[i]);
+        }
+    }
     
 }
