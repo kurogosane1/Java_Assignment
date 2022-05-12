@@ -1,6 +1,6 @@
 import java.util.Scanner;
 import java.lang.Integer;
-import java.util.ArrayList;
+
 
 /*
 Write a program that allows a student to enter up to 10 test quiz scores, computes the average score, and then displays the letter grade. Students will develop the Java program in six steps and each step will build off the code from the previous steps, which are listed in the prompt below.
@@ -68,45 +68,10 @@ public class Assignment
     }
 
     public static void main(String[] args) {
-        // Score Array
-        // ArrayList<Integer> scores = new ArrayList<Integer>();
-
-        //  Scanner myInput = new Scanner(System.in);
-        // System.out.println("Welcome to calculating your test scores");
-        // System.out.println("We will ask you to enter your 10 quiz scores and display your letter grade and average");
-        // System.out.println("Please enter between 1-99 only");
-        // System.out.println("Any number beyond that will result in the program terminating");
-        // System.out.println("Do not enter any text /n " +
-        //         "or the program will be terminated");
-        // System.out.println("Enter your 1st test score");
-        // String quiz_1 = myInput.nextLine();
-        // System.out.println("Enter your 2nd quiz score");
-        // String quiz_2 = myInput.nextLine();
-        // System.out.println("Enter your 3rd quiz score");
-        // String quiz_3 = myInput.nextLine();
-        // System.out.println("Enter your 4th quiz score");
-        // String quiz_4 = myInput.nextLine();
-        // System.out.println("Enter your 5th quiz score");
-        // String quiz_5 = myInput.nextLine();
-        // System.out.println("Enter your 6th quiz score");
-        // String quiz_6 = myInput.nextLine();
-        // System.out.println("Enter your 7th quiz score");
-        // String quiz_7 = myInput.nextLine();
-        // System.out.println("Enter your 8th quiz score");
-        // String quiz_8 = myInput.nextLine();
-        // System.out.println("Enter your 9th quiz score");
-        // String quiz_9 = myInput.nextLine();
-        // System.out.println("Enter your final quiz score");
-        // String quiz_10 = myInput.nextLine();
-        // System.out.println("Enter your 3rd quiz score");
+        
         int[] scores = inputScores();
         printScores(scores);
-        
-        // double result = scoreCalculator(quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9,
-        //         quiz_10);
-        // String grade = grading(result);
-        // System.out5.println(" Your total quiz score " + (int) result);
-        // System.out.println("Your grade is " + grade);
+        int gradeTotal = scoreCalc(scores);
     }
     
      // Program to have them loop and enter test scores
@@ -142,5 +107,17 @@ public class Assignment
             System.out.println("Your "+ i+" quiz score is "+ array[i]);
         }
     }
+
+    // Calculating score total
+    public static int scoreCalc(int[] array) {
+        int total = 0;
+        for (int i = 0; i < array.length; i++) {
+            total += total + array[i];
+        }
+
+        return total;
+    }
+    
+    // Calculating score Average
     
 }
