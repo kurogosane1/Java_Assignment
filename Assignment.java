@@ -19,33 +19,6 @@ F = 0-59
 */
 public class Assignment
 {
-   
-     
-   
-     // This is to calculate the average and total
-    public static double scoreCalculator(String q1, String q2, String q3, String q4, String q5, String q6, String q7, String q8,
-            String q9, String q10)
-    {
-        int quiz_1 = Integer.parseInt(q1);
-        int quiz_2 = Integer.parseInt(q2);
-        int quiz_3 = Integer.parseInt(q3);
-        int quiz_4 = Integer.parseInt(q4);
-        int quiz_5 = Integer.parseInt(q5);
-        int quiz_6 = Integer.parseInt(q6);
-        int quiz_7 = Integer.parseInt(q7);
-        int quiz_8 = Integer.parseInt(q8);
-        int quiz_9 = Integer.parseInt(q9);
-        int quiz_10 = Integer.parseInt(q10);
-        int values[] = { quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6, quiz_7, quiz_8, quiz_9, quiz_10 };
-        int sum = 0;
-        for (int i = 0; i < values.length; i++)
-            sum += values[i];
-        double average = ((double) sum) / values.length;
-        System.out.println("Your score is " + average);
-        System.out.println("your total score is " + sum);
-
-        return average;
-    }
     
     // This is to calculate the grade to receive
     public static String grading(int avg)
@@ -57,7 +30,7 @@ public class Assignment
             case 9:
                 return "A";            
             case 8:
-                return  "B";              
+                return "B";              
             case 7:
                 return "C";            
             case 6:
