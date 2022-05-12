@@ -48,11 +48,12 @@ public class Assignment
     }
     
     // This is to calculate the grade to receive
-    public static String grading(double avg)
+    public static String grading(int avg)
     {
-     
-        int averg = (int)avg;
-        switch (averg/10) {
+        
+        int averg = avg/10;
+        System.out.println("Average is here "+averg);
+        switch (averg) {
             case 9:
                 return "A";            
             case 8:
@@ -71,7 +72,11 @@ public class Assignment
         
         int[] scores = inputScores();
         printScores(scores);
-        int gradeTotal = scoreCalc(scores);
+        int[] gradeTotal = scoreCalc(scores);
+        String gradeScore = grading(gradeTotal[1]);
+        System.out.println("Your total grade is " + gradeScore);
+        System.out.println("Total scores received is "+ gradeTotal[0]+"\nwhile your average score is "+gradeTotal[1]);
+        
     }
     
      // Program to have them loop and enter test scores
@@ -108,16 +113,19 @@ public class Assignment
         }
     }
 
-    // Calculating score total
-    public static int scoreCalc(int[] array) {
-        int total = 0;
+    // Calculating score total and average score
+    public static int[] scoreCalc(int[] array) {
+        int[] total= new int[2];
+        total[0] = 0;
         for (int i = 0; i < array.length; i++) {
-            total += total + array[i];
+            total[0] = total[0] + array[i];
+            
         }
-
+    
+        total[1] = total[0] / array.length;
         return total;
     }
     
-    // Calculating score Average
+    
     
 }
